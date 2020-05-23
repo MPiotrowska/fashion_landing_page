@@ -1,0 +1,12 @@
+.button {
+    border:2px solid $primary-color;
+    text-transform: uppercase;
+    padding: 5px 30px;
+    background: transparent;
+    color:$primary-color ;
+    font-weight: 500;
+}
+.button-secondary {
+    border:none;
+    background: white;
+}
