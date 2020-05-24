@@ -1,6 +1,8 @@
-._*
-.DS_Store
 .sass-cache
-.Spotlight-V100
-.Trashes
-node_modules/*
+.sass-cache/*
+*.scssc
+*.log
+.htaccess
+node_modules/
+public/
+src/css/style.css

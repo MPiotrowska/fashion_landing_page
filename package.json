@@ -1,16 +1,42 @@
 {
-  "name": "landing-page",
+  "name": "mochino-suits",
+  "description": "Landing Page Project",
   "version": "1.0.0",
-  "description": "A simple landing page.",
-  "main": "index.js",
+  "main": "public/index.html",
+  "author": "Monika Piotrowska",
   "scripts": {
-    "start": "node-sass --include-path scss sass/style.scss css/style.css --output-style expanded && node-sass --include-path scss sass/style.scss css/style.min.css --output-style compressed && autoprefixer-cli -o css/style.css css/style.css && autoprefixer-cli -o css/style.min.css css/style.min.css",
-    "watch": "nodemon -e scss -x 'npm start'"
+    "scss": "node-sass src/sass/style.scss public/css/style.css",
+    "css": "postcss public/css/*.css -u autoprefixer cssnano -r -m",
+    "copy:html": "copyfiles -u 1 ./src/*.html ./src/**/*.html public",
+    "copy:js": "copyfiles -u 1 ./src/js/*.js public",
+    "copy:assets": "rm -rf public/assets && cp -R ./src/assets/ public/assets/",
+    "copy": "npm run copy:js && npm run copy:html && npm run copy:assets",
+    "watch:html": "onchange 'src/*.html' 'src/**/*.html' -- npm run copy:html",
+    "watch:sass": "node-sass --watch src/sass -o public/css",
+    "watch:js": "onchange 'src/js/*.js' -- npm run copy:js",
+    "watch": "npm run watch:html & npm run watch:sass & npm run watch:js",
+    "serve": "browser-sync start --server public --files public --port 8000",
+    "develop": "npm run copy && npm run scss ; npm run watch & npm run serve",
+    "build": "npm run copy:build && npm run scss ; npm run css",
+    "lint": "stylelint 'src/sass/**/*.scss' 'src/sass/**/**/*.scss' 'src/sass/**/**/**/*.scss'",
+    "lint:fix": "stylelint --fix 'src/sass/**/*.scss' 'src/sass/**/**/*.scss' 'src/sass/**/**/**/*.scss'"
   },
-  "license": "MIT",
-  "devDependencies": {
-    "autoprefixer-cli": "^1.0.0",
-    "node-sass": "^3.4.2",
-    "nodemon": "^1.8.1"
-  }
+  "dependencies": {
+    "autoprefixer": "^9.8.0",
+    "browser-sync": "^2.26.3",
+    "copyfiles": "^2.1.0",
+    "cssnano": "^4.1.10",
+    "node-sass": "^4.14.1",
+    "onchange": "^7.0.2",
+    "postcss-cli": "^7.1.1",
+    "stylelint": "^13.5.0",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.0.0",
+    "stylelint-scss": "^3.17.2",
+    "stylelint-selector-bem-pattern": "^2.1.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
 }
