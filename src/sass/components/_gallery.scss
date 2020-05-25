@@ -1,4 +1,28 @@
-.gallery {
+.grid-container {
   display: grid;
-  gap: 5px;
+  grid-template-columns: auto auto auto auto auto;
+  background-color: white;
+  padding: 30px 100px 30px 100px;
+}
+
+.grid-item {
+  border: 1px solid white;
+  padding: 0px 3px 0px 3px;
+  font-size: 30px;
+  text-align: center;
+}
+.container-child-heading {
+  position: relative;
+
+  &:before {
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 2px;
+    background: darkgray;
+
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }

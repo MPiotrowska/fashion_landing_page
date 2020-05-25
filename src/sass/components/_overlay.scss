@@ -1,0 +1,19 @@
+.overlay-text {
+  color: white;
+}
+.overlay-line {
+  flex: 1;
+
+  position: relative;
+
+  &:before {
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 2px;
+    background: white;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

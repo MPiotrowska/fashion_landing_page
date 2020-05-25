@@ -1,6 +1,6 @@
 .container {
   width: 100vw;
-  padding: 30px;
+  padding: 80px;
   margin: 0 auto;
 }
 
@@ -28,30 +28,14 @@
     flex-direction: column;
   }
 }
-
-.container-flex-child {
-  flex: 1;
-
-  &-heading {
-    position: relative;
-
-    &:before {
-      position: absolute;
-      content: "";
-      width: 80px;
-      height: 2px;
-      background: white;
-      top: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-  }
+.container-footer {
+  padding: 0px;
+  margin: auto;
 }
-
 .row {
   width: 100%;
   text-align: center;
-  margin: 30px auto 0;
+  margin: 30px auto;
 }
 
 .row-quote {
