@@ -1,3 +1,16 @@
 .header {
   width: 100vw;
+  .logo {
+    &-mainline {
+      font-weight: 900;
+      color: #3b3b3b;
+      opacity: 0.8;
+    }
+    &-subline {
+      margin: 5px auto 10px;
+      opacity: 0.5;
+      font-size: 8px;
+      margin-left: 8px;
+    }
+  }
 }
