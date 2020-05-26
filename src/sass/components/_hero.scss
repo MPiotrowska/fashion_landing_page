@@ -7,3 +7,33 @@
     height: 100%;
   }
 }
+.left {
+  position: absolute;
+  top: 500px;
+  left: 250px;
+  color: white;
+  width: 400px;
+}
+.overlay-text {
+  color: white;
+}
+.overlay-line {
+  flex: 1;
+
+  position: relative;
+
+  &:before {
+    position: absolute;
+    content: "";
+    width: 400px;
+    height: 2px;
+    background: white;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.bigger_font {
+  font-size: 40px;
+  font-weight: 700;
+}

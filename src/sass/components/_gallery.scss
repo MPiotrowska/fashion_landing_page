@@ -1,4 +1,7 @@
 .gallery-container {
+  padding-bottom: 120px;
+  @media screen and (min-width: $desktop) {
+  }
   &-child-heading {
     position: relative;
 
@@ -15,15 +18,13 @@
   }
   .grid-container {
     display: grid;
-    width: 75%;
-    margin: auto;
-    padding: 30px;
+    width: 95%;
+    margin: 0 auto;
+
     gap: 5px;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     background-color: white;
-    @media screen and (max-width: $tablet) {
-      padding: 20px;
-    }
+    max-width: 1200px;
   }
 
   .grid-item {
