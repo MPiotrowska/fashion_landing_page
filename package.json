@@ -17,7 +17,7 @@
     "watch": "npm run watch:html & npm run watch:sass & npm run watch:js",
     "serve": "browser-sync start --server public --files public npm",
     "develop": "npm run copy && npm run scss ; npm run watch & npm run serve",
-    "build": "npm run copy:build && npm run scss ; npm run css",
+    "build": "npm run copy && npm run scss ; npm run css",
     "lint": "stylelint 'src/sass/**/*.scss' 'src/sass/**/**/*.scss' 'src/sass/**/**/**/*.scss'",
     "lint:fix": "stylelint --fix 'src/sass/**/*.scss' 'src/sass/**/**/*.scss' 'src/sass/**/**/**/*.scss'"
   },
