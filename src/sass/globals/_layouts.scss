@@ -93,6 +93,9 @@
 .row-quote {
   width: 50%;
   margin: auto;
+  @media only screen and (max-width: $tablet) {
+    width: 100%;
+  }
 }
 
 .row-copyright {
