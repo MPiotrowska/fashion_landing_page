@@ -48,6 +48,32 @@
   width: 100%;
   text-align: center;
   margin: 30px auto;
+
+  &-container {
+    width: 60%;
+    max-width: 455px;
+    padding: 30px;
+    align-self: center;
+    margin-left: auto;
+    position: relative;
+    @media screen and(max-width:$medium-screen) {
+      width: 100%;
+      margin: auto;
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      width: 84%;
+      height: 2px;
+      background: white;
+      top: 52%;
+      left: 50%;
+      transform: translateX(-50%);
+      @media screen and(width: 1440px) {
+        top: 50%;
+      }
+    }
+  }
 }
 
 .row-quote {

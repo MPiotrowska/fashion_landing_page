@@ -8,6 +8,9 @@
   cursor: pointer;
   border-radius: 9px;
   transition: all 0.4s ease-in-out;
+  @media screen and(max-width:$tablet) {
+    width: 100%;
+  }
 
   &:hover {
     color: white;
